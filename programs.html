@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Programs - Abyssinia Holistic Tutorial Center</title>
+    <meta name="description" content="Explore our comprehensive educational programs for students from grade 3 to 12. Specialized tutoring and exam preparation.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .program-card {
+            position: relative;
+            overflow: hidden;
+        }
+        .program-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 128px;
+            height: 128px;
+            border-radius: 50%;
+            filter: blur(48px);
+            opacity: 0.1;
+            transition: var(--transition-smooth);
+        }
+        .program-card:hover::before {
+            transform: scale(1.5);
+        }
+        .program-card.blue::before {
+            background: linear-gradient(135deg, #3b82f6, #06b6d4);
+        }
+        .program-card.purple::before {
+            background: linear-gradient(135deg, #a855f7, #ec4899);
+        }
+        .program-card.green::before {
+            background: linear-gradient(135deg, #10b981, #059669);
+        }
+        .program-card.orange::before {
+            background: linear-gradient(135deg, #f59e0b, #ef4444);
+        }
+        .feature-list {
+            list-style: none;
+            padding: 0;
+        }
+        .feature-list li {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 0.75rem;
+            font-size: 0.875rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-content">
+                <a href="index.html" class="logo">
+                    <div class="logo-icon">
+                        <svg width="24" height="24" fill="white" viewBox="0 0 24 24">
+                            <path d="M12 3L1 9l4 2.18v6L12 21l7-3.82v-6l2-1.09V17h2V9L12 3zm6.82 6L12 12.72 5.18 9 12 5.28 18.82 9zM17 15.99l-5 2.73-5-2.73v-3.72L12 15l5-2.73v3.72z"/>
+                        </svg>
+                    </div>
+                    <span class="logo-text">Abyssinia Holistic</span>
+                </a>
+
+                <div style="display: flex; align-items: center; gap: 2rem;">
+                    <ul class="nav-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="programs.html">Programs</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                    
+                    <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">
+                        <svg class="sun-icon" width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                            <circle cx="12" cy="12" r="5"/><path d="M12 1v2m0 18v2M4.22 4.22l1.42 1.42m12.72 12.72l1.42 1.42M1 12h2m18 0h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
+                        </svg>
+                        <svg class="moon-icon" width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+                        </svg>
+                    </button>
+                    
+                    <button class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Toggle menu">
+                        <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                            <path d="M3 12h18M3 6h18M3 18h18"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <div class="mobile-menu" id="mobileMenu">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="programs.html">Programs</a>
+                <a href="contact.html">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section style="padding-top: 8rem; padding-bottom: 3rem;">
+        <div class="container">
+            <div style="max-width: 64rem; margin: 0 auto; text-align: center; margin-bottom: 4rem;" class="animate-fade-in">
+                <h1 style="font-size: 3.5rem; font-weight: 700; margin-bottom: 1.5rem;">
+                    Our <span class="gradient-text">Programs</span>
+                </h1>
+                <p style="font-size: 1.25rem; color: hsl(var(--muted-foreground));">
+                    Comprehensive educational programs designed for students from grade 3 to 12
+                </p>
+            </div>
+
+            <!-- Programs Grid -->
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2rem; margin-bottom: 4rem;">
+                <!-- Grade 3-5 Program -->
+                <div class="card program-card blue animate-slide-up">
+                    <div style="position: relative;">
+                        <div style="display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 1.5rem;">
+                            <div>
+                                <div style="display: inline-block; padding: 0.5rem 1rem; border-radius: 9999px; background: hsl(var(--primary) / 0.1); color: hsl(var(--primary)); font-size: 0.875rem; font-weight: 500; margin-bottom: 0.75rem;">
+                                    Grade 3 - 5
+                                </div>
+                                <h3 style="font-size: 1.5rem; font-weight: 700; margin-bottom: 0.5rem;">Foundation Program</h3>
+                                <p style="color: hsl(var(--muted-foreground)); font-size: 0.875rem;">Building strong fundamentals with spoken English and comprehensive learning</p>
+                            </div>
+                            <div style="padding: 0.75rem; border-radius: 12px; background: linear-gradient(135deg, #3b82f6, #06b6d4); flex-shrink: 0;">
+                                <svg width="24" height="24" fill="white" viewBox="0 0 24 24">
+                                    <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
+                                </svg>
+                            </div>
+                        </div>
+
+                        <ul class="feature-list" style="margin-bottom: 1.5rem;">
+                            <li>
+                                <svg width="20" height="20" fill="hsl(var(--primary))" viewBox="0 0 24 24">
+                                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/>
+                                </svg>
+                                <span>Spoken English Training</span>
+                            </li>
+                            <li>
+                                <svg width="20" height="20" fill="hsl(var(--primary))" viewBox="0 0 24 24">
+                                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/>
+                                </svg>
+                                <span>Panorama Learning Approach</span>
+                            </li>
+                            <li>
+                                <svg width="20" height="20" fill="hsl(var(--primary))" viewBox="0 0 24 24">
+                                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/>
+                                </svg>
+                                <span>Interactive Learning Activities</span>
+                            </li>
+                            <li>
+                                <svg width="20" height="20" fill="hsl(var(--primary))" viewBox="0 0 24 24">
+                                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/>
+                                </svg>
+                                <span>Progress Tracking & Reports</span>
+                            </li>
+                            <li>
+                                <svg width="20" height="20" fill="hsl(var(--primary))" viewBox="0 0 24 24">
+                                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/>
+                                </svg>
+                                <span>Small Class Sizes</span>
+                            </li>
+                        </ul>
+
+                        <a href="contact.html" class="btn btn-primary" style="width: 100%;">
+                            Enroll Now
+                            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                <path d="M5 12h14m-7-7l7 7-7 7"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Grade 6 Program -->
+                <div class="card program-card purple animate-slide-up" style="animation-delay: 0.1s;">
+                    <div style="position: relative;">
+                        <div style="display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 1.5rem;">
+                            <div>
+                                <div style="display: inline-block; padding: 0.5rem 1rem; border-radius: 9999px; background: hsl(var(--primary) / 0.1); color: hsl(var(--primary)); font-size: 0.875rem; font-weight: 500; margin-bottom: 0.75rem;">
+                                    Grade 6
+                                </div>
+                                <h3 style="font-size: 1.5rem; font-weight: 700; margin-bottom: 0.5rem;">Regional Exam Prep</h3>
+                                <p style="color: hsl(var(--muted-foreground)); font-size: 0.875rem;">Specialized preparation for regional exams with focus on English and Mathematics</p>
+                            </div>
+                            <div style="padding: 0.75rem; border-radius: 12px; background: linear-gradient(135deg, #a855f7, #ec4899); flex-shrink: 0;">
+                                <svg width="24" height="24" fill="white" viewBox="0 0 24 24">
+                                    <circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/>
+                                </svg>
+                            </div>
+                        </div>
+
+                        <ul class="feature-list" style="margin-bottom: 1.5rem;">
+                            <li>
+                                <svg width="20" height="20" fill="hsl(var(--primary))" viewBox="0 0 24 24">
+                                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/>
+                                </svg>
+                                <span>English Mastery</span>
+                            </li>
+                            <li>
+                                <svg width="20" height="20" fill="hsl(var(--primary))" viewBox="0 0 24 24">
+                                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/>
+                                </svg>
+                                <span>Mathematics Excellence</span>
+                            </li>
+                            <li>
+                                <svg width="20" height="20" fill="hsl(var(--primary))" viewBox="0 0 24 24">
+                                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/>
+                                </svg>
+                                <span>Exam Strategies & Tips</span>
+                            </li>
+                            <li>
+                                <svg width="20" height="20" fill="hsl(var(--primary))" viewBox="0 0 24 24">
+                                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/>
+                                </svg>
+                                <span>Mock Tests & Assessments</span>
+                            </li>
+                            <li>
+                                <svg width="20" height="20" fill="hsl(var(--primary))" viewBox="0 0 24 24">
+                                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/>
+                                </svg>
+                                <span>Individual Attention</span>
+                            </li>
+                        </ul>
+
+                        <a href="contact.html" class="btn btn-primary" style="width: 100%;">
+                            Enroll Now
+                            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                <path d="M5 12h14m-7-7l7 7-7 7"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Grade 7-8 Program -->
+                <div class="card program-card green animate-slide-up" style="animation-delay: 0.2s;">
+                    <div style="position: relative;">
+                        <div style="display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 1.5rem;">
+                            <div>
+                                <div style="display: inline-block; padding: 0.5rem 1rem; border-radius: 9999px; background: hsl(var(--primary) / 0.1); color: hsl(var(--primary)); font-size: 0.875rem; font-weight: 500; margin-bottom: 0.75rem;">
+                                    Grade 7 - 8
+                                </div>
+                                <h3 style="font-size: 1.5rem; font-weight: 700; margin-bottom: 0.5rem;">Advanced English Program</h3>
+                                <p style="color: hsl(var(--muted-foreground)); font-size: 0.875rem;">Mastering English language skills for academic and practical success</p>
+                            </div>
+                            <div style="padding: 0.75rem; border-radius: 12px; background: linear-gradient(135deg, #10b981, #059669); flex-shrink: 0;">
+                                <svg width="24" height="24" fill="white" viewBox="0 0 24 24">
+                                    <path d="M12 3L1 9l4 2.18v6L12 21l7-3.82v-6l2-1.09V17h2V9L12 3zm6.82 6L12 12.72 5.18 9 12 5.28 18.82 9zM17 15.99l-5 2.73-5-2.73v-3.72L12 15l5-2.73v3.72z"/>
+                                </svg>
+                            </div>
+                        </div>
+
+                        <ul class="feature-list" style="margin-bottom: 1.5rem;">
+                            <li>
+                                <svg width="20" height="20" fill="hsl(var(--primary))" viewBox="0 0 24 24">
+                                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/>
+                                </svg>
+                                <span>Advanced Grammar</span>
+                            </li>
+                            <li>
+                                <svg width="20" height="20" fill="hsl(var(--primary))" viewBox="0 0 24 24">
+                                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/>
+                                </svg>
+                                <span>Reading Comprehension</span>
+                            </li>
+                            <li>
+                                <svg width="20" height="20" fill="hsl(var(--primary))" viewBox="0 0 24 24">
+                                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/>
+                                </svg>
+                                <span>Writing Skills Development</span>
+                            </li>
+                            <li>
+                                <svg width="20" height="20" fill="hsl(var(--primary))" viewBox="0 0 24 24">
+                                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/>
+                                </svg>
+                                <span>Speaking & Presentation</span>
+                            </li>
+                            <li>
+                                <svg width="20" height="20" fill="hsl(var(--primary))" viewBox="0 0 24 24">
+                                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/>
+                                </svg>
+                                <span>Literature Appreciation</span>
+                            </li>
+                        </ul>
+
+                        <a href="contact.html" class="btn btn-primary" style="width: 100%;">
+                            Enroll Now
+                            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                <path d="M5 12h14m-7-7l7 7-7 7"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Grade 9-12 Program -->
+                <div class="card program-card orange animate-slide-up" style="animation-delay: 0.3s;">
+                    <div style="position: relative;">
+                        <div style="display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 1.5rem;">
+                            <div>
+                                <div style="display: inline-block; padding: 0.5rem 1rem; border-radius: 9999px; background: hsl(var(--primary) / 0.1); color: hsl(var(--primary)); font-size: 0.875rem; font-weight: 500; margin-bottom: 0.75rem;">
+                                    Grade 9 - 12
+                                </div>
+                                <h3 style="font-size: 1.5rem; font-weight: 700; margin-bottom: 0.5rem;">Senior Program</h3>
+                                <p style="color: hsl(var(--muted-foreground)); font-size: 0.875rem;">Comprehensive support for high school students preparing for university</p>
+                            </div>
+                            <div style="padding: 0.75rem; border-radius: 12px; background: linear-gradient(135deg, #f59e0b, #ef4444); flex-shrink: 0;">
+                                <svg width="24" height="24" fill="white" viewBox="0 0 24 24">
+                                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87m-4-12a4 4 0 0 1 0 7.75"/>
+                                </svg>
+                            </div>
+                        </div>
+
+                        <ul class="feature-list" style="margin-bottom: 1.5rem;">
+                            <li>
+                                <svg width="20" height="20" fill="hsl(var(--primary))" viewBox="0 0 24 24">
+                                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/>
+                                </svg>
+                                <span>Subject-Specific Tutoring</span>
+                            </li>
+                            <li>
+                                <svg width="20" height="20" fill="hsl(var(--primary))" viewBox="0 0 24 24">
+                                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/>
+                                </svg>
+                                <span>University Entrance Prep</span>
+                            </li>
+                            <li>
+                                <svg width="20" height="20" fill="hsl(var(--primary))" viewBox="0 0 24 24">
+                                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/>
+                                </svg>
+                                <span>Critical Thinking Skills</span>
+                            </li>
+                            <li>
+                                <svg width="20" height="20" fill="hsl(var(--primary))" viewBox="0 0 24 24">
+                                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/>
+                                </svg>
+                                <span>Research & Study Skills</span>
+                            </li>
+                            <li>
+                                <svg width="20" height="20" fill="hsl(var(--primary))" viewBox="0 0 24 24">
+                                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/>
+                                </svg>
+                                <span>Career Guidance</span>
+                            </li>
+                        </ul>
+
+                        <a href="contact.html" class="btn btn-primary" style="width: 100%;">
+                            Enroll Now
+                            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                <path d="M5 12h14m-7-7l7 7-7 7"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Additional Info -->
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-bottom: 4rem;">
+                <div class="card animate-slide-up" style="text-align: center;">
+                    <div style="font-size: 2.5rem; font-weight: 700; margin-bottom: 0.5rem;" class="gradient-text">Small</div>
+                    <div style="color: hsl(var(--muted-foreground)); margin-bottom: 0.5rem;">Class Sizes</div>
+                    <p style="font-size: 0.875rem; color: hsl(var(--muted-foreground));">Maximum attention for every student</p>
+                </div>
+                
+                <div class="card animate-slide-up" style="text-align: center;">
+                    <div style="font-size: 2.5rem; font-weight: 700; margin-bottom: 0.5rem;" class="gradient-text">Expert</div>
+                    <div style="color: hsl(var(--muted-foreground)); margin-bottom: 0.5rem;">Tutors</div>
+                    <p style="font-size: 0.875rem; color: hsl(var(--muted-foreground));">Qualified and experienced educators</p>
+                </div>
+                
+                <div class="card animate-slide-up" style="text-align: center;">
+                    <div style="font-size: 2.5rem; font-weight: 700; margin-bottom: 0.5rem;" class="gradient-text">Flexible</div>
+                    <div style="color: hsl(var(--muted-foreground)); margin-bottom: 0.5rem;">Schedule</div>
+                    <p style="font-size: 0.875rem; color: hsl(var(--muted-foreground));">Times that work for your family</p>
+                </div>
+            </div>
+
+            <!-- CTA Section -->
+            <div class="card" style="position: relative; overflow: hidden;">
+                <div style="position: absolute; inset: 0; background: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--secondary))); opacity: 0.9;"></div>
+                <div style="position: relative; padding: 3rem; text-align: center; color: white;">
+                    <h2 style="font-size: 2.5rem; font-weight: 700; margin-bottom: 1rem;">Not Sure Which Program is Right?</h2>
+                    <p style="font-size: 1.125rem; margin-bottom: 2rem; opacity: 0.9; max-width: 48rem; margin-left: auto; margin-right: auto;">
+                        Contact us for a free consultation and we'll help you find the perfect program for your child
+                    </p>
+                    <a href="contact.html" class="btn btn-secondary btn-lg">
+                        Get Free Consultation
+                        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                            <path d="M5 12h14m-7-7l7 7-7 7"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 1rem;">
+                        <div style="padding: 0.5rem; border-radius: 12px; background: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--secondary)));">
+                            <svg width="24" height="24" fill="white" viewBox="0 0 24 24">
+                                <path d="M12 3L1 9l4 2.18v6L12 21l7-3.82v-6l2-1.09V17h2V9L12 3zm6.82 6L12 12.72 5.18 9 12 5.28 18.82 9zM17 15.99l-5 2.73-5-2.73v-3.72L12 15l5-2.73v3.72z"/>
+                            </svg>
+                        </div>
+                        <span style="font-size: 1.125rem; font-weight: 700;" class="gradient-text">Abyssinia Holistic</span>
+                    </div>
+                    <p style="font-size: 0.875rem; color: hsl(var(--muted-foreground));">
+                        Education is not private, but cooperative - fostering a supportive learning environment for everyone.
+                    </p>
+                </div>
+
+                <div>
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="programs.html">Programs</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3>Our Programs</h3>
+                    <ul>
+                        <li style="color: hsl(var(--muted-foreground)); font-size: 0.875rem;">Grade 3-5 Tutoring</li>
+                        <li style="color: hsl(var(--muted-foreground)); font-size: 0.875rem;">Grade 6 Exam Prep</li>
+                        <li style="color: hsl(var(--muted-foreground)); font-size: 0.875rem;">Grade 7-8 English</li>
+                        <li style="color: hsl(var(--muted-foreground)); font-size: 0.875rem;">Spoken English</li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3>Contact Us</h3>
+                    <ul style="margin-bottom: 1rem;">
+                        <li style="display: flex; align-items: center; gap: 0.5rem; color: hsl(var(--muted-foreground)); font-size: 0.875rem;">
+                            <span>📞</span> +251 XXX XXX XXX
+                        </li>
+                        <li style="display: flex; align-items: center; gap: 0.5rem; color: hsl(var(--muted-foreground)); font-size: 0.875rem;">
+                            <span>✉️</span> info@abyssinia.edu
+                        </li>
+                        <li style="display: flex; align-items: center; gap: 0.5rem; color: hsl(var(--muted-foreground)); font-size: 0.875rem;">
+                            <span>📍</span> Addis Ababa, Ethiopia
+                        </li>
+                    </ul>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook">📘</a>
+                        <a href="#" aria-label="Twitter">🐦</a>
+                        <a href="#" aria-label="Instagram">📷</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 Abyssinia Holistic Tutorial Center. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
