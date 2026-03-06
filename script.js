@@ -52,36 +52,32 @@ function setActiveLink() {
 // Form submission
 function handleFormSubmit(event) {
   event.preventDefault();
-  
-  // Show success message
+
+  const form = event.target;
+
   const message = document.createElement('div');
   message.style.cssText = `
     position: fixed;
     top: 20px;
     right: 20px;
-    background: hsl(var(--primary));
+    background: green;
     color: white;
     padding: 1rem 1.5rem;
     border-radius: 8px;
-    box-shadow: var(--shadow-elevated);
     z-index: 9999;
-    animation: slideDown 0.3s ease-out;
   `;
-  message.innerHTML = `
-    <strong>Message Sent!</strong><br>
-    <span style="font-size: 0.875rem;">We'll get back to you within 24 hours.</span>
-  `;
-  
+  message.innerHTML = `<strong>Message Sent!</strong>`;
+
   document.body.appendChild(message);
-  
-  // Remove message after 3 seconds
-  setTimeout(() => {
-    message.style.animation = 'fadeOut 0.3s ease-out';
-    setTimeout(() => message.remove(), 300);
-  }, 3000);
-  
-  // Reset form
-  event.target.reset();
+
+  // Send form to Formspree
+  fetch(form.action, {
+    method: "POST",
+    body: new FormData(form),
+    headers: { 'Accept': 'application/json' }
+  }).then(() => {
+    form.reset();
+  });
 }
 
 // Smooth scroll for anchor links
@@ -308,3 +304,4 @@ document.addEventListener('DOMContentLoaded', () => {
     document.head.appendChild(style);
   }
 });
+
