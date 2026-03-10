@@ -3,7 +3,7 @@
 A website made for a Tutorial Center.
 Website for a tutorial center providing course information and registration details.
 
-## 🌍 Live Demo                            
+## 🌍 Live Demo                           
 
 https://mr-danix.github.io/Tutorial-center/
 
