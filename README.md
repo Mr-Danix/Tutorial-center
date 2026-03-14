@@ -7,7 +7,7 @@ Website for a tutorial center providing course information and registration deta
 
 https://mr-danix.github.io/Tutorial-center/
 
-## 🚀 Features
+## 🚀 Features 
 
 - Course listings
 - About instructors
